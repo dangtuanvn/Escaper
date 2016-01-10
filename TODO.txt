@@ -1,0 +1,39 @@
+More features:
+
+Effects (touch coin, touch enemies, ...)
+Loading screen
+Power ups
+More objects and enemies
+More levels
+Projectiles
+Kill enemies
+Interactable objects
+Background scrolling (parallax)
+
+------------------------------------------------------
+Can be improved:
+
+Window size: Current window size is fixed and may not be displayed properly on different screen size.
+	Make the window be able to scale?
+
+Die action: more animations, move the player?
+
+Dynamic Entity: modify method Patrol() for it to be universal, making it possible to call this method
+	to get an object to patrol on X-axis or Y-axis or even in a circle instead of writing different
+	patrol methods for each object.
+
+Redesign input: combine input from class World and Player or split Input to another class,
+	as of now, whenever the game is paused, the getInput() from class Player is inaccessible 
+	because EntityManager is not updating. In order to unpause, the input must come from
+	class World. However, due to many direct use of class Player's variables in getInput(),
+	moving getInput() to another class would require excessive amount of accessors.
+
+Entity collision: collision check between other entities if needed? The current code only check
+	for collision between the player and other entities, which mean other entities don't touch
+	each other. Because more checks mean more resources require, meanwhile there is no use for such
+	system at the moment.
+
+	Change to Quadtree collision check?	
+
+Gravity: Gravity is only applied on the Player for now. As above, there is no need for gravity to apply 
+	to all entities yet.
